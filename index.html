@@ -13,7 +13,8 @@
       padding: 0;
     }
 
-    html, body {
+    html,
+    body {
       width: 100%;
       min-height: 100%;
       background: #050505;
@@ -39,7 +40,10 @@
         );
     }
 
-    /* Foto principal */
+    /* =========================
+       FOTO PRINCIPAL
+    ========================= */
+
     .hero {
       position: relative;
       width: 100%;
@@ -65,11 +69,20 @@
       position: absolute;
       inset: 0;
       background:
-        linear-gradient(to bottom, rgba(0,0,0,0.00) 40%, rgba(0,0,0,0.16) 60%, rgba(0,0,0,0.94) 91%, #000 100%);
+        linear-gradient(
+          to bottom,
+          rgba(0,0,0,0.00) 40%,
+          rgba(0,0,0,0.16) 60%,
+          rgba(0,0,0,0.94) 91%,
+          #000 100%
+        );
       pointer-events: none;
     }
 
-    /* Elemento discreto no topo, semelhante ao perfil da referência */
+    /* =========================
+       MINI PERFIL
+    ========================= */
+
     .mini-profile {
       position: absolute;
       left: 24px;
@@ -111,7 +124,10 @@
       white-space: nowrap;
     }
 
-    /* Identificação centralizada, abaixo das mãos */
+    /* =========================
+       IDENTIDADE
+    ========================= */
+
     .identity {
       position: absolute;
       left: 50%;
@@ -163,7 +179,10 @@
       color: rgba(255,255,255,0.88);
     }
 
-    /* Conteúdo */
+    /* =========================
+       CONTEÚDO / CARDS
+    ========================= */
+
     .content {
       position: relative;
       z-index: 10;
@@ -180,7 +199,14 @@
       text-decoration: none;
       -webkit-tap-highlight-color: transparent;
       box-shadow: 0 10px 28px rgba(0,0,0,0.30);
-      transition: transform 0.16s ease, box-shadow 0.16s ease;
+      transition:
+        transform 0.16s ease,
+        box-shadow 0.16s ease;
+    }
+
+    /* Espaçamento entre os cards */
+    .card-link + .card-link {
+      margin-top: 12px;
     }
 
     .card-link:active {
@@ -195,18 +221,21 @@
       border: 0;
     }
 
-    /* Área para adicionar outros cards depois */
-    .future-card-slot {
-      margin-top: 12px;
-    }
+    /* =========================
+       RODAPÉ
+    ========================= */
 
     .footer {
-      padding: 11px 0 28px;
+      padding: 17px 0 28px;
       text-align: center;
       color: rgba(255,255,255,0.72);
       font-size: 12px;
       letter-spacing: 0.15px;
     }
+
+    /* =========================
+       DESKTOP
+    ========================= */
 
     @media (min-width: 700px) {
       .page {
@@ -229,17 +258,24 @@
 </head>
 
 <body>
+
   <main class="page">
 
+    <!-- =========================
+         FOTO PRINCIPAL
+    ========================= -->
+
     <section class="hero">
+
       <img
         class="hero-image"
         src="https://res.cloudinary.com/f5yuukov/image/upload/v1789666241/07ef0ae8-9022-43dd-9bd7-4b04e58820d7.png"
         alt="Felipe Ribeiro"
       />
-    </div>
 
-<div class="identity">
+      <!-- Identificação -->
+      <div class="identity">
+
         <div class="identity-avatar">
           <img
             src="https://res.cloudinary.com/f5yuukov/image/upload/v1789665013/8939182b-1615-4e73-b1bb-e12d179fd651.png"
@@ -251,14 +287,43 @@
           <div class="name">Felipe Ribeiro</div>
           <div class="handle">@iamfelipezz</div>
         </div>
+
       </div>
+
     </section>
 
+
+    <!-- =========================
+         CARDS
+    ========================= -->
+
     <section class="content">
+
       <!--
-        TROQUE O href pelo destino do card.
-        O card usa exatamente a segunda imagem enviada.
+        CARD 1
+        Como chegar nos seus primeiros 10 mil seguidores
+
+        TROQUE O href="#" PELO LINK DE DESTINO DO CARD.
       -->
+
+      <a
+        class="card-link"
+        href="#"
+        aria-label="Como chegar nos seus primeiros 10 mil seguidores"
+      >
+        <img
+          class="card-image"
+          src="https://res.cloudinary.com/f5yuukov/image/upload/v1789828232/card_youtube_2.png"
+          alt="Como chegar nos seus primeiros 10 mil seguidores"
+        />
+      </a>
+
+
+      <!--
+        CARD 2
+        YouTube
+      -->
+
       <a
         class="card-link"
         href="https://youtube.com/"
@@ -273,14 +338,18 @@
         />
       </a>
 
-      <!-- Espaço reservado para os próximos cards -->
-      <div class="future-card-slot"></div>
+
+      <!-- =========================
+           RODAPÉ
+      ========================= -->
 
       <div class="footer">
         © Felipe Ribeiro
       </div>
+
     </section>
 
   </main>
+
 </body>
 </html>
