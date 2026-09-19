@@ -13,8 +13,7 @@
       padding: 0;
     }
 
-    html,
-    body {
+    html, body {
       width: 100%;
       min-height: 100%;
       background: #050505;
@@ -40,10 +39,7 @@
         );
     }
 
-    /* =========================
-       FOTO PRINCIPAL
-    ========================= */
-
+    /* Foto principal */
     .hero {
       position: relative;
       width: 100%;
@@ -69,20 +65,11 @@
       position: absolute;
       inset: 0;
       background:
-        linear-gradient(
-          to bottom,
-          rgba(0,0,0,0.00) 40%,
-          rgba(0,0,0,0.16) 60%,
-          rgba(0,0,0,0.94) 91%,
-          #000 100%
-        );
+        linear-gradient(to bottom, rgba(0,0,0,0.00) 40%, rgba(0,0,0,0.16) 60%, rgba(0,0,0,0.94) 91%, #000 100%);
       pointer-events: none;
     }
 
-    /* =========================
-       MINI PERFIL
-    ========================= */
-
+    /* Elemento discreto no topo, semelhante ao perfil da referência */
     .mini-profile {
       position: absolute;
       left: 24px;
@@ -124,10 +111,7 @@
       white-space: nowrap;
     }
 
-    /* =========================
-       IDENTIDADE
-    ========================= */
-
+    /* Identificação centralizada, abaixo das mãos */
     .identity {
       position: absolute;
       left: 50%;
@@ -179,10 +163,7 @@
       color: rgba(255,255,255,0.88);
     }
 
-    /* =========================
-       CONTEÚDO / CARDS
-    ========================= */
-
+    /* Conteúdo */
     .content {
       position: relative;
       z-index: 10;
@@ -194,19 +175,13 @@
     .card-link {
       display: block;
       width: 100%;
+      aspect-ratio: 1000 / 235;
       border-radius: 11px;
       overflow: hidden;
       text-decoration: none;
       -webkit-tap-highlight-color: transparent;
       box-shadow: 0 10px 28px rgba(0,0,0,0.30);
-      transition:
-        transform 0.16s ease,
-        box-shadow 0.16s ease;
-    }
-
-    /* Espaçamento entre os cards */
-    .card-link + .card-link {
-      margin-top: 12px;
+      transition: transform 0.16s ease, box-shadow 0.16s ease;
     }
 
     .card-link:active {
@@ -217,25 +192,23 @@
     .card-image {
       display: block;
       width: 100%;
-      height: auto;
+      height: 100%;
       border: 0;
+      object-fit: fill;
     }
 
-    /* =========================
-       RODAPÉ
-    ========================= */
+    /* Área para adicionar outros cards depois */
+    .card-link + .card-link {
+      margin-top: 5px;
+    }
 
     .footer {
-      padding: 17px 0 28px;
+      padding: 11px 0 28px;
       text-align: center;
       color: rgba(255,255,255,0.72);
       font-size: 12px;
       letter-spacing: 0.15px;
     }
-
-    /* =========================
-       DESKTOP
-    ========================= */
 
     @media (min-width: 700px) {
       .page {
@@ -258,24 +231,17 @@
 </head>
 
 <body>
-
   <main class="page">
 
-    <!-- =========================
-         FOTO PRINCIPAL
-    ========================= -->
-
     <section class="hero">
-
       <img
         class="hero-image"
-        src="https://res.cloudinary.com/f5yuukov/image/upload/v1789666241/07ef0ae8-9022-43dd-9bd7-4b04e58820d7.png"
+        src="https://res.cloudinary.com/f5yuukov/image/upload/v1789665013/8939182b-1615-4e73-b1bb-e12d179fd651.png"
         alt="Felipe Ribeiro"
       />
+    </div>
 
-      <!-- Identificação -->
-      <div class="identity">
-
+<div class="identity">
         <div class="identity-avatar">
           <img
             src="https://res.cloudinary.com/f5yuukov/image/upload/v1789665013/8939182b-1615-4e73-b1bb-e12d179fd651.png"
@@ -285,45 +251,26 @@
 
         <div class="identity-text">
           <div class="name">Felipe Ribeiro</div>
-          <div class="handle">@iamfelipezz</div>
+          <div class="handle">@feliperibeiro</div>
         </div>
-
       </div>
-
     </section>
 
-
-    <!-- =========================
-         CARDS
-    ========================= -->
-
     <section class="content">
-
-      <!--
-        CARD 1
-        Como chegar nos seus primeiros 10 mil seguidores
-
-        TROQUE O href="#" PELO LINK DE DESTINO DO CARD.
-      -->
-
+      <!-- Card 1: Como chegar aos primeiros 10 mil seguidores -->
       <a
         class="card-link"
         href="#"
-        aria-label="Como chegar nos seus primeiros 10 mil seguidores"
+        aria-label="Como chegar aos seus primeiros 10 mil seguidores"
       >
         <img
           class="card-image"
-          src="https://res.cloudinary.com/f5yuukov/image/upload/v1789828232/card_youtube_2.png"
-          alt="Como chegar nos seus primeiros 10 mil seguidores"
+          src="https://res.cloudinary.com/f5yuukov/image/upload/v1789830469/2.png"
+          alt="Como chegar aos seus primeiros 10 mil seguidores"
         />
       </a>
 
-
-      <!--
-        CARD 2
-        YouTube
-      -->
-
+      <!-- Card 2: Meu YouTube -->
       <a
         class="card-link"
         href="https://youtube.com/"
@@ -333,23 +280,16 @@
       >
         <img
           class="card-image"
-          src="https://res.cloudinary.com/f5yuukov/image/upload/v1789665006/card_youtube.png"
+          src="https://res.cloudinary.com/f5yuukov/image/upload/v1789830470/1.png"
           alt="Meu YouTube"
         />
       </a>
 
-
-      <!-- =========================
-           RODAPÉ
-      ========================= -->
-
       <div class="footer">
         © Felipe Ribeiro
       </div>
-
     </section>
 
   </main>
-
 </body>
 </html>
