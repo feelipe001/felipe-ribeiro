@@ -154,13 +154,16 @@
 
     .card-link {
       display: block;
+      position: relative;
       width: 100%;
       aspect-ratio: 1000 / 235;
       border-radius: 11px;
       overflow: hidden;
       text-decoration: none;
       -webkit-tap-highlight-color: transparent;
+
       box-shadow: 0 10px 28px rgba(0,0,0,0.30);
+
       transition:
         transform 0.16s ease,
         box-shadow 0.16s ease;
@@ -180,8 +183,59 @@
     }
 
     /* Apenas 5px entre os cards */
+
     .card-link + .card-link {
       margin-top: 5px;
+    }
+
+    /* =========================
+       CARDS BLOQUEADOS
+    ========================= */
+
+    .card-disabled {
+      cursor: default;
+    }
+
+    .card-disabled .card-image {
+      filter: brightness(0.48) saturate(0.65);
+    }
+
+    .card-disabled::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.20);
+      pointer-events: none;
+    }
+
+    /* Selo EM BREVE */
+
+    .coming-soon {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+
+      z-index: 5;
+
+      padding: 8px 15px;
+
+      background: rgba(0,0,0,0.82);
+      border: 1px solid rgba(255,255,255,0.25);
+      border-radius: 50px;
+
+      color: #fff;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 1.3px;
+      white-space: nowrap;
+
+      box-shadow: 0 5px 20px rgba(0,0,0,0.45);
+
+      backdrop-filter: blur(5px);
+      -webkit-backdrop-filter: blur(5px);
+
+      pointer-events: none;
     }
 
     /* =========================
@@ -242,6 +296,11 @@
       .handle {
         font-size: 13px;
       }
+
+      .coming-soon {
+        padding: 7px 12px;
+        font-size: 10px;
+      }
     }
 
   </style>
@@ -268,13 +327,16 @@
       <div class="identity">
 
         <div class="identity-avatar">
+
           <img
             src="https://res.cloudinary.com/f5yuukov/image/upload/v1789665013/8939182b-1615-4e73-b1bb-e12d179fd651.png"
             alt="Felipe Ribeiro"
           />
+
         </div>
 
         <div class="identity-text">
+
           <div class="name">
             Felipe Ribeiro
           </div>
@@ -282,6 +344,7 @@
           <div class="handle">
             @afroworlld
           </div>
+
         </div>
 
       </div>
@@ -295,9 +358,10 @@
 
     <section class="content">
 
-      <!-- CARD 1
-           COMO CHEGAR NOS PRIMEIROS 10 MIL
-      -->
+
+      <!-- =========================
+           CARD 1 — DISPONÍVEL
+      ========================= -->
 
       <a
         class="card-link"
@@ -314,14 +378,14 @@
       </a>
 
 
-      <!-- CARD 2
-           QUALIDADE CINEMATOGRÁFICA
-      -->
+      <!-- =========================
+           CARD 2 — EM BREVE
+      ========================= -->
 
-      <a
-        class="card-link"
-        href="https://feelipe001.github.io/cine-mobile/"
-        aria-label="Qualidade cinematográfica sem precisar de uma câmera cara"
+      <div
+        class="card-link card-disabled"
+        aria-label="Qualidade cinematográfica — em breve"
+        aria-disabled="true"
       >
 
         <img
@@ -330,19 +394,21 @@
           alt="Qualidade cinematográfica sem precisar de uma câmera cara"
         />
 
-      </a>
+        <div class="coming-soon">
+          EM BREVE
+        </div>
+
+      </div>
 
 
-      <!-- CARD 3
-           MEU YOUTUBE
-      -->
+      <!-- =========================
+           CARD 3 — EM BREVE
+      ========================= -->
 
-      <a
-        class="card-link"
-        href="https://youtube.com/"
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="Meu YouTube"
+      <div
+        class="card-link card-disabled"
+        aria-label="Meu YouTube — em breve"
+        aria-disabled="true"
       >
 
         <img
@@ -351,10 +417,16 @@
           alt="Meu YouTube"
         />
 
-      </a>
+        <div class="coming-soon">
+          EM BREVE
+        </div>
+
+      </div>
 
 
-      <!-- RODAPÉ -->
+      <!-- =========================
+           RODAPÉ
+      ========================= -->
 
       <div class="footer">
         © Felipe Ribeiro
